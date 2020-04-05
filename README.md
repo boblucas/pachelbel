@@ -1,4 +1,5 @@
-# pachelbel
+# Pachelbel magnificat fugues
+
 The 95 magnificat fugues as written by Pachelbel in lilypond
 
 This edition is based on the 1901 publication by Max Seiffert & Hugo Botstiber. It is mostly unchanged but the voicing has been optimized somewhat and some minor errors (mostly rhythmic) have been corrected. Also all the page turns are gone and Primi toni fugue 15, which was written in breves, is rhythmically halved for clarity. 
