@@ -1,0 +1,198 @@
+%mkdir out && m4 primi.tex > out/primi.tex && /usr/bin/lilypond-book out/primi.tex --out out && cd out && pdflatex primi.tex && cd .. && cp out/primi.pdf ./ && rm -r out && evince primi.pdf
+\documentclass[a4paper]{memoir}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{array}
+\usepackage{pdfpages}
+\begin{document}
+
+\vspace{200pt}
+
+\begin{center}
+\Huge
+Pachelbel \\
+\Large
+Compositionen zumeist Fugen uber das Magnificat
+\end{center}
+
+\vfill
+
+This edition is based on the 1901 publication by Max Seiffert \& Hugo Botstiber. It is mostly unchanged but the voicing has been optimized somewhat and some minor errors (mostly rhythmic) have been corrected.
+ Also all the page turns are gone and Primi toni fugue 15, which was written in breves, is rhythmically halved for clarity. 
+
+\newpage
+\newpage
+
+define(`LP', `\lilypond[fragment,relative=2,staffsize=12.6,line-width=205pt,noragged-right]')
+
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\begin{vplace}[1]
+\begin{center}
+\begin{tabular}{ccm{210pt}|ccm{210pt}}
+\setlength{\tabcolsep}{20pt}
+p.1 & I 1 & LP {d,4^"a3" a' f8 d bes'4 a8 g f e d4 } &
+p.27 & II 2 & LP { \key d \minor g8^"a3" a16 g fis8 d g a16 g fis8 d g4 a } \\
+
+p.2 & I 2 & LP { r4^"a4" a d4. d8 cis4 a d8 e f4 e2  } &
+p.28 & II 3 & LP { \key d \minor r8^"a2" g g g a4 a8 a bes c bes a g a g fis g4 } \\
+
+p.3 & I 3 & LP { \time 12/8 d,4^"a2" d8 a'4 a8 a d, g g c, f f b, e e a, d d4 cis8 e4. } &
+p.29 & II 4 & LP { \key d \minor g2^"a4" a bes4 a8 bes g a bes c d4 } \\
+
+p.4 & I 4 & LP { d,4^"a4, stretti" a' g f8 e f2 e } &
+p.30 & II 5 & LP { \key d \minor g4^"a3" a bes8 fis g a bes fis g a bes4 } \\
+
+p.5 & I 5 & LP { \time 12/8 d,8^"a3" e d e f e f g f g f g a4 f8 g4 a8 d,4 d'8 c4 b8  } &
+p.31 & II 6 & LP { \key d \minor d,2^"a4" g4 bes fis g a8 a16 bes c8 a bes } \\
+
+p.6 & I 6 & LP { \key d \minor \override Staff.TimeSignature #'stencil = ##f \time 8/4 r8^"a3" d,[ f a] f[ d d' d ] c16 d c bes a c bes a bes c bes a g bes a g } &
+p.32 & II 7 & LP { \key d \minor r4^"a4" d bes g c2 d g, } \\
+
+p.7 & I 7 & LP { d,4.^"a4, stretti" d8 c4\trill a d8 c d e f2  } &
+p.33 & II 8 & LP { \override Staff.TimeSignature #'stencil = ##f \time 8/4 \key d \minor d8^"a3" d16 d d8 d bes8 d16 c bes c a bes g fis g a g bes a g a g a bes a c bes a  } \\
+
+p.8 & I 8 & LP { d,8^"a4" d d d c4 a d e8.\trill d32 e f4  } &
+p.34 & II 9 & LP { \key d \minor r8^"a4" g g g d d' d d c c c c bes bes bes bes a } \\
+
+p.9 & I 9 & LP { r8^"a4" a16 a f8 a d, a'16 a f8 a d, cis d16  } &
+p.35 & II 10 & LP { \key d \minor \time 6/8 d4^"a4" d8 c d a bes r4 r4.   } \\
+
+p.10 & I 10 & LP { r4^"a2" a8 g f e f cis d e f g a4 } &
+p.36 & III 1 & LP { g2^"a4, augmentation" a4 c ~ | c c c2 } \\
+
+p.10 & I 11 & LP { a2^"a4" a4 a d, bes' a8 g f e d   } &
+p.37 & III 2 & LP { f4^"a4, augmentation" f d f d2 c } \\
+
+p.11 & I 12 & \begin{lilypond}[fragment,relative=2,staffsize=12.6,line-width=205pt,noragged-right] 
+	<< {r8^"a4" a' g a d,4 bes' a8 g f e d e f g a4 } \\ { d,,4. e8 f4 g a2  } >>
+\end{lilypond} &
+p.38 & III 3 & LP { g8^"a4" c b g a16 b c d b8 g a4 b c } \\
+
+p.14 & I 13 & LP { a8^"a4" a16 a a8 a d, bes' a g a g16 f g8 a d, } &
+p.39 & III 4 & LP { g16^"a4" d e fis g a b c d8 a d8.\trill c16 b8. b16 c8 d e } \\
+
+p.15 & I 14 & LP { a4.^"a4" a8 a4 bes cis, d g8 g f e  } &
+p.40 & III 5 & LP { \time 12/8 d4^"a4" d8 d4 d8 b4 g8 b c d | c d e d e c } \\
+
+p.16 & I 15 & LP { a2^"a4" d,4 bes' cis, a' d, g a, f' e2\trill d4 } &
+p.41 & III 6 & LP { d8.^"a4" c16 b a g8 a b c16 b32 c d16 c b } \\
+
+p.17 & I 16 & LP { a16^"a3" f g a d, f e d e a g a e g f e f8 d16 e f g a b c4  } &
+p.42 & III 7 & LP { d4^"a4" b c16 d c b a b c a b c b a g a b g a4 d, g } \\
+
+p.18 & I 17 & LP { a2^"a2" f g bes a e f d  } &
+p.43 & III 8 & LP { d2^"a2" e4 b c a d2 g,} \\
+
+p.19 & I 18 & LP { a2^"a4" bes f4 g2 a4 d,2  } &
+p.44 & III 9 & LP { r8^"a3" d e d16 c b c b c d4 g,8 a b16 c a b c4 } \\
+
+p.20 & I 19 & LP { r8^"a4, stretti" a a a bes4 b c cis d2 } &
+p.45 & III 10 & LP { r8^"a2" c b8.\trill a32 b c4 r8 b c d16 c b8. a16 g4 } \\
+
+p.21 & I 20 & LP { d,4.^"a4" d8 e4 cis d f g8 g f e d4  } &
+p.46 & III 11 & LP { \override Staff.TimeSignature #'stencil = ##f r8^"a4" g8 g g c,4 r8 c d e f16 g f g e f e f d e d e c } \\
+
+p.22 & I 21 & LP { d,8^"a4" d e e f16 g f e d8 d' c4  } &
+p.47 & IV 1 & LP { b2^"a4" e4. e8 d d d c16 b c8 c c b16 a b2 } \\
+
+p.23 & I 22 & LP { d4.^"a4" d8 cis4 d e f e2 } &
+p.48 & IV 2 & LP { \override Staff.TimeSignature #'stencil = ##f \time 8/4 b4.^"a3" b8  e16 f e f d e d e c d c d b c b c a gis a b a c b a } \\
+
+p.24 & I 23 & LP { d4.^"a3" d8 cis cis d d a4. a8 bes a16 g f8 g a  } &
+p.49 & IV 3 & LP { b2^"a4" c8 b16 a g8 a b e, e' fis g } \\
+
+p.26 & II 1 & LP { \key d \minor g4^"a2" fis g a bes c d  } &
+p.50 & IV 4 & LP { e16^"a4" e e e e e e e f e d f e d c e d c b d c b a b  } \\
+\end{tabular}
+\end{center}
+\end{vplace}
+
+
+\begin{vplace}[1]
+\begin{center}
+\begin{tabular}{ccm{210pt}|ccm{210pt}}
+p.51 & IV 5 & LP { b2^"a4" gis4 e c'2 b a } &
+p.74 & VI 9 & LP { \key d \minor r8^"a3" c a d g, c f, bes e, a d, g c, f f e f4 } \\
+
+p.52 & IV 6 & LP { r8^"a4" b16 c b a gis fis e8 e' b16 c d e c4 } &
+p.75 & VI 10 & LP { \key d \minor \override Staff.TimeSignature #'stencil = ##f \time 16/4 r8^"a3" c16 c c4 r8 f,16 f f4 \noBreak r8 f'16 f e f d e c8 d16 d c d bes c \noBreak a bes a g f g a bes } \\
+
+p.53 & IV 7 & LP { \time 12/8 b8 e^"a4" b gis a b e, fis gis gis a b  } &
+p.76 & VII 1 & LP { \key g \minor c4^"a4, augentation" b c ees d c d  } \\
+
+p.54 & IV 8 & LP { e8^"a4" e c8.\trill b32 c d8 d b8.\trill a32 b c4 } &
+p.77 & VII 2 & LP { \key g \minor c8^"a3" d16 c b4 c16 b c d ees4 d16 ees d ees c ees d c d4. } \\
+
+p.55 & V 1 & LP { \key f \major f4^"a4" c d bes' a g f2 } &
+p.78 & VII 3 & LP { \key g \minor c,16^"a3" g' d g ees g c, g' d g b, g' g, g' d f ees8 c c' c } \\
+
+p.56 & V 2 & LP { \key f \major f4^"a4" f8 f g c, c' bes a4 g } &
+p.79 & VII 4 & LP { \key g \minor d4.^"a3, stretto" c8 b4 bes8 c16 d f,4 fis g8 fis g a b g c2 } \\
+
+p.57 & V 3 & LP { \key f \major \time 12/8 f,4^"a4" f8 f4 f8 g4 g8 g4 g8 a bes c a g f a g a b a b } &
+p.80 & VII 5 & LP { \key g \minor d8.^"a3, stretto" c16 b8. a16 g8. d'16 ees8. f16 ees4 } \\
+
+p.58 & V 4 & LP { \key f \major f,4.^"a4" g8 a bes c16 bes a g f8 c' d a bes g c g } &
+p.81 & VII 6 & LP { \key g \minor c4^"a4" g c8 b16 c d8 c16 d ees2. } \\
+
+p.59 & V 5 & LP { \key f \major c4^"a4" r8 c a a r d g, g r c f, f r bes e,8.\trill d32 e f4 g2  } &
+p.82 & VII 7 & LP { \key g \minor g4^"a3" g aes r a a bes r b b c d g, ees' d8 c b a16 b c4 } \\
+
+p.60 & V 6 & LP { \key f \major c8^"a4" c16 c c8 d c4 r8 a  bes c d e f4 } &
+p.83 & VII 8 & LP { \key g \minor g^"a3" aes g r8 c b a16 g c8 d ees4 d c } \\
+
+p.61 & V 7 & LP { \key f \major c4^"a4" d c8 bes16 a bes8 c a4 } &
+p.84 & IIX 1 & LP { \time 6/8 d4^"a4" c8 b4 e8 d4 c8 b4 a8 g4. } \\
+
+p.62 & V 8 & LP { \key f \major \override Staff.TimeSignature #'stencil = ##f \time 16/4 r8^"a4" c16 d c d c d c8 d c16 bes a g f8 f'16 g f g f g e4 d c8 c d16 e d e } &
+p.85 & IIX 2 & LP { d16^"a2" e d e c d c d b b e f e f d e d e c d c d b4 } \\
+
+p.63 & V 9 & LP { \key f \major f,16^"a3" g f g f g f g c,8 c c'4 f, g a8 } &
+p.86 & IIX 3 & LP { d4^"a4" b8 g c d16 e d8. c16 b4 } \\
+
+p.64 & V 10 & LP { \key f \major \time 12/8 f4^"a4" f8 e4 e8 f4 f8 d4 d8 g a g f g f e f e d e d } &
+p.87 & IIX 4 & LP { d8.^"a3" e16 d16 c b a g8 g' d16 g d g e f e f d e d c b8 } \\
+
+p.65 & V 11 & LP { \key f \major \time 6/8 f4^"a3" f8 g f g ees d ees f ees f d c bes d4 ees8 } &
+p.88 & IIX 5 & LP { d16^"a3" e d c b c b a g a b c d e fis d g4 } \\
+
+p.66 & V 12 & LP { \key f \major f4^"a4" c d4. c16 d bes8 c d ees f c f4 } &
+p.89 & IIX 6 & LP { d16^"a3" d d d d d d d d8 d d d e e b c d4  } \\
+
+p.67 & VI 1 & \begin{lilypond}[fragment,relative=2,staffsize=12.6,line-width=205pt,noragged-right] 
+	\key d \minor << { r4^"a4" r16 c16 d e f e f g f e d c d e f8 f f4.\trill e8 } \\ { c2 a4 f bes a g2  } >> 
+\end{lilypond} &
+p.90 & IIX 7 & LP { \key g \major d8^"a3" e b c d16 e d e a, b a b c d c d g, a g a b8  } \\
+
+p.68 & VI 2 & LP {  \key d \minor \time 12/8 f8^"a4" f f f f f e d c e f g f g a d, e f e f g c, d e } &
+p.91 & IIX 8 & \begin{lilypond}[fragment,relative=2,staffsize=12.6,line-width=205pt,noragged-right] 
+	\override Staff.TimeSignature #'stencil = ##f \time 16/4
+	\key g \major << { r2^"a4" r8 a' fis16 d e fis  g a g fis e cis d e fis g fis e d cis d e fis g a fis } \\ { g,4. g8 fis fis b b e, e a a d, d g g fis4 } >> 
+\end{lilypond} \\
+
+p.69 & VI 3 & LP {  \key d \minor  \override Staff.TimeSignature #'stencil = ##f \time 48/8 f,4^"a3" f8 g4 g8 a g a f4 c'8 \noBreak d c d bes c d c bes c a bes c \noBreak bes a bes g a bes } &
+p.94 & IIX 9 & LP { \key g \major  \override Staff.TimeSignature #'stencil = ##f \time 4/4 d4.^"a3" d8 fis,4. fis8 g8 a b c d d16 e d e d e c8 c16 d c d c d } \\
+
+p.70 & VI 4 & LP {  \key d \minor f,8^"a4" f16 f g8 g16 g a8 f r f' e4 d\trill } &
+p.95 & IIX 10 & LP { r8^"a3" d d d b d16 c b c b a g  } \\
+
+p.71 & VI 5 & LP { \key d \minor f8^"a3" c d c c16 d c8 d c f c c16 d c8 c16 bes a bes a g } &
+p.96 & IIX 11 & LP { \key g \major \override Staff.TimeSignature #'stencil = ##f \time 4/4 r8^"a3" d b c d b16 a g8 a b g' fis e d c16 b c8 d g,4 } \\
+
+p.72 & VI 6 & LP { \key d \minor  \override Staff.TimeSignature #'stencil = ##f \time 4/4 f,8^"a3" f f f c' r8 c d d d c16 bes c8 c c bes16 a bes4 c } &
+p.97 & IIX 12 & LP { \key g \major \override Staff.TimeSignature #'stencil = ##f \time 4/4 r8^"a2" g b16 c d b e8 e, b' c d d, a' b c c, g' a b4 } \\
+
+p.73 & VI 7 & \begin{lilypond}[fragment,relative=2,staffsize=12.6,line-width=205pt,noragged-right] 
+	\key d \minor r8^"a3" c c c d4 d8 c16 bes c8 f, r f' \repeat tremolo 2 { e16 g } \repeat tremolo 2 { c,16 e } \repeat tremolo 2 { d16 f } \repeat tremolo 2 { b,16 d } \repeat tremolo 2 { c16 e } \repeat tremolo 2 { g,16 bes } 
+\end{lilypond} &
+p.98 & IIX 13 & LP { \override Staff.TimeSignature #'stencil = ##f \time 10/4 \key g \major g16^"a3" g, a b c d e fis g8 g, r4 g'16 g, a b c d e fis g8 g, r g' fis16 a fis d e4\trill  } \\
+
+p.74 & VI 8 & LP { \key d \minor c4^"a4" c8 c a d g, c f, bes a g f } \\
+\end{tabular}
+\end{center}
+\end{vplace}
+
+\newpage
+\includepdf[pages=1-]{../magnificat.pdf}
+
+\end{document}
